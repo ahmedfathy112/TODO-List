@@ -1,0 +1,100 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: rgb(138, 132, 132);
+}
+
+.mainPage {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  padding: 20px 30px;
+  border-radius: 20px;
+  width: 767px;
+  margin: auto;
+  background-color: white;
+}
+
+.mainPage .logo h1 {
+  font-size: 35px;
+  color: #000;
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 40px;
+}
+.mainPage form {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+}
+.mainPage form input {
+  padding: 7px 10px;
+  display: inline-block;
+  border-radius: 10px;
+  font-size: 18px;
+  color: #000;
+  border: none;
+  outline: none;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  margin-bottom: 30px;
+}
+
+.mainPage form button {
+  width: 200px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 10px 15px;
+  background-color: orange;
+  border-radius: 20px;
+}
+
+.mainPage .todoBody {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  flex-direction: column;
+  margin-top: 20px;
+}
+.todoBody .cardTodo {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  background-color: rgb(168, 166, 166);
+  padding: 10px;
+  border-radius: 10px;
+  margin: auto;
+  margin-bottom: 15px;
+}
+.cardTodo h3 {
+  color: white;
+  font-size: 25px;
+  font-weight: 400;
+}
+.cardTodo .todoBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.cardTodo .todoBtn button {
+  padding: 9px 15px;
+  margin-right: 15px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  color: #000;
+  cursor: pointer;
+}
+#EditTodo {
+  background-color: green;
+  color: aliceblue;
+}
+#DeleteTodo {
+  background-color: red;
+  color: aliceblue;
+}
