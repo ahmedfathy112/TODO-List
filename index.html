@@ -4,14 +4,34 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="design.css" />
   </head>
-  <body>
-    <main class="mainPage">
-      <div class="logo"><h1>TO DO List</h1></div>
+  <body id="bodyPage">
+    <header>
+      <div class="darkMood" id="dark-containr">
+        <div class="dark" id="darkIcon">
+          <i class="fa fa-moon" aria-hidden="true"></i>
+        </div>
+        <div class="light" id="ligthIcon">
+          <i class="fa fa-sun" aria-hidden="true"></i>
+        </div>
+      </div>
+    </header>
+    <main class="mainPage" id="mainPAGE">
+      <div class="logo"><h1 id="LogoPage">TO DO List</h1></div>
       <form>
         <input type="text" id="todoText" placeholder="Add TODO" />
-        <button onclick="addTodo()" id="AddTask">Add Task</button>
+        <div class="btnTO">
+          <button onclick="addTodo()" id="AddTask">Add Task</button>
+          <button onclick="deleteTODOS()" id="DeleteTasks">Delete All Tasks</button>
+        </div>
       </form>
       <section class="todoBody" id="toBody">
         <!-- <div class="cardTodo">

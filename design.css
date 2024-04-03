@@ -2,6 +2,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   min-height: 100vh;
   background-color: rgb(138, 132, 132);
 }
@@ -41,7 +42,11 @@ body {
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   margin-bottom: 30px;
 }
-
+.mainPage form .btnTO {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 .mainPage form button {
   width: 200px;
   border: none;
@@ -50,6 +55,11 @@ body {
   padding: 10px 15px;
   background-color: orange;
   border-radius: 20px;
+  color: aliceblue;
+}
+#DeleteTasks {
+  background-color: red;
+  color: aliceblue;
 }
 
 .mainPage .todoBody {
@@ -97,4 +107,37 @@ body {
 #DeleteTodo {
   background-color: red;
   color: aliceblue;
+}
+
+/* start dark mood style */
+header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .darkMood {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  padding: 15px;
+  border-radius: 50px;
+  width: 30px;
+  position: relative;
+  background-color: #000;
+  border: 2px solid;
+  cursor: pointer;
+}
+.darkMood .dark,
+.light {
+  position: absolute;
+  left: 5px;
+  color: aliceblue;
+  font-size: 25px;
+  transition: 1.5s ease-in-out;
+}
+
+.light {
+  display: none;
 }
