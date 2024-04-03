@@ -18,7 +18,11 @@ body {
   margin: auto;
   background-color: white;
 }
-
+@media screen and (max-width: 767px) {
+  .mainPage {
+    width: 80%;
+  }
+}
 .mainPage .logo h1 {
   font-size: 35px;
   color: #000;
