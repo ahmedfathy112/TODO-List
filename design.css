@@ -60,7 +60,10 @@ body {
   background-color: red;
   color: aliceblue;
 }
-
+.completed-text {
+  text-decoration: line-through;
+  color: #000;
+}
 .mainPage .todoBody {
   display: flex;
   justify-content: center;

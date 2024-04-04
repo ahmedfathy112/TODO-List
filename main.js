@@ -8,27 +8,37 @@ function loadTodos() {
 
   todoBody.innerHTML = "";
 
-  todos.forEach(function (todoText, index) {
+  todos.forEach(function (todo, index) {
     var todoCard = document.createElement("div");
     todoCard.className = "cardTodo";
+    var todoText = todo.text;
+    var todoCompleted = todo.completed;
+
     var todoContant = document.createElement("h3");
     todoContant.textContent = todoText;
 
+    if (todoCompleted) {
+      todoContant.style.textDecoration = "line-through"; // تمرير خط بداخل النص
+      todoContant.style.color = "#000"; // تغيير لون النص إلى الأسود
+    }
+
     var deleteButton = document.createElement("button");
-    deleteButton.id = "DeleteTodo";
     deleteButton.textContent = "Delete";
     deleteButton.onclick = function () {
       todos.splice(index, 1);
       localStorage.setItem("todos", JSON.stringify(todos));
       loadTodos();
     };
+
     var DoneButton = document.createElement("button");
-    DoneButton.id = "DoneTodo";
-    DoneButton.textContent = "Done";
+    DoneButton.textContent = todoCompleted ? "Completed" : "Done"; // تحديد نص الزر بناءً على حالة الإكمال
     DoneButton.onclick = function () {
-      todoContant.style.textDecoration = "line-through";
-      todoContant.style.color = "#000";
+      todoCompleted = !todoCompleted;
+      todo.completed = todoCompleted;
+      localStorage.setItem("todos", JSON.stringify(todos));
+      loadTodos(); // إعادة تحميل القائمة بعد تغيير حالة الإكمال
     };
+
     var todoBTNS = document.createElement("div");
     todoBTNS.className = "todoBtn";
     todoBTNS.appendChild(deleteButton);
@@ -49,8 +59,11 @@ function addTodo() {
     return;
   }
 
+  // var todos = JSON.parse(localStorage.getItem("todos")) || [];
+  // todos.push(todoText);
+  // localStorage.setItem("todos", JSON.stringify(todos));
   var todos = JSON.parse(localStorage.getItem("todos")) || [];
-  todos.push(todoText);
+  todos.push({ text: todoText, completed: false }); // تحديد الإكمال كـ false بشكل افتراضي
   localStorage.setItem("todos", JSON.stringify(todos));
 
   loadTodos();
